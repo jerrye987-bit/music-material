@@ -12,9 +12,9 @@
     </div>
     <div class="content__playlist">
       <TrackItem
-      v-for="track in tracks"
-      :key="track.id"
-      :track="track" />
+        v-for="track in tracks"
+        :key="track.id"
+        :track="track" />
     </div>
   </div>
 </template>
@@ -51,3 +51,56 @@ const tracks = [
   },
 ]
 </script>
+
+<style scoped>
+  .centerblock__content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content__playlist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    margin-bottom: 8px;
+  }
+
+  .card span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .page-layout {
+      flex-direction: column;
+    }
+    .sidebar-column {
+      width: 100%;
+    }
+  }
+</style>

@@ -66,9 +66,10 @@
 </template>
 
 <script setup>
-import '../assets/css/page.css'
-import NavBar from '@/components/NavBar.vue'
-import FilterControls from '@/components/FilterControls.vue'
-import Playlist from '@/components/PlayList.vue'
-import PlayerBar from '@/components/PlayerBar.vue'
+  import '../assets/css/page.css'
+  import NavBar from '@/components/NavBar.vue'
+  import FilterControls from '@/components/FilterControls.vue'
+  import Playlist from '@/components/PlayList.vue'
+  import PlayerBar from '@/components/PlayerBar.vue'
 </script>
+
