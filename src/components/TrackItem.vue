@@ -31,10 +31,118 @@
 </template>
 
 <script setup>
-defineProps({
-  track: {
-    type: Object,
-    required: true,
-  },
-})
+  defineProps({
+    track: {
+      type: Object,
+      required: true,
+    },
+  })
 </script>
+
+<style scoped>
+  .track__titleLink,
+  .track__authorLink,
+  .track__albumLink {
+    text-decoration: none;
+  }
+
+  .playlist__track {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .playlist__item {
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .playlist__track {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .track__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 447px;
+    min-width: 0;
+  }
+
+  .track__titleImage {
+    width: 51px;
+    height: 51px;
+    padding: 16px;
+    background: #313131;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 17px;
+  }
+
+  .track__titleSvg {
+    width: 18px;
+    height: 17px;
+    fill: transparent;
+    stroke: #4e4e4e;
+  }
+
+  .track__titleLink {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+  }
+
+  .track__titleSpan {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4e4e4e;
+  }
+
+  .track__author {
+    flex: 0 1 321px;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .track__authorLink {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .track__album {
+    flex: 0 1 245px;
+    min-width: 0;
+  }
+
+  .track__albumLink {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #696969;
+  }
+
+  .track__timeSvg {
+    width: 14px;
+    height: 12px;
+    margin-right: 17px;
+    fill: transparent;
+    stroke: #696969;
+  }
+
+  .track__timeText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #696969;
+  }
+</style>

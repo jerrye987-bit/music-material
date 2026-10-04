@@ -4,4 +4,12 @@
   <RouterView />
 </template>
 
-<style scoped></style>
+<style>
+  * {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>

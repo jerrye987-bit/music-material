@@ -5,7 +5,7 @@
       <div class="playlistTitle__col col02">Исполнитель</div>
       <div class="playlistTitle__col col03">Альбом</div>
       <div class="playlistTitle__col col04">
-        <svg class="playlistTitle__svg">
+        <svg class="playlistTitle__svg" width="12" height="12" viewBox="0 0 12 12">
           <use xlink:href="/img/icon/sprite.svg#icon-watch"></use>
         </svg>
       </div>
@@ -20,36 +20,15 @@
 </template>
 
 <script setup>
-import TrackItem from './TrackItem.vue'
+  import { ref, onMounted } from 'vue'
+  import TrackItem from '@/components/TrackItem.vue'
 
-const tracks = [
-  { id: 1, title: 'Guilt', subtitle: '', author: 'Nero', album: 'Welcome Reality', time: '4:44' },
-  {
-    id: 2,
-    title: 'Elektro',
-    subtitle: '',
-    author: 'Dynoro, Outwork, Mr. Gee',
-    album: 'Elektro',
-    time: '2:22',
-  },
-  { id: 3, title: "I'm Fire", subtitle: '', author: 'Ali Bakgor', album: "I'm Fire", time: '2:22' },
-  {
-    id: 4,
-    title: 'Non Stop',
-    subtitle: '(Remix)',
-    author: 'Стоункат, Psychopath',
-    album: 'Non Stop',
-    time: '4:12',
-  },
-  {
-    id: 5,
-    title: 'Run Run',
-    subtitle: '(feat. AR/CO)',
-    author: 'Jaded, Will Clarke, AR/CO',
-    album: 'Run Run',
-    time: '2:54',
-  },
-]
+  const tracks = ref([])
+
+  onMounted(async () => {
+    const res = await fetch('/tracks.json')
+    tracks.value = await res.json()
+  })
 </script>
 
 <style scoped>
@@ -93,6 +72,49 @@ const tracks = [
     font-weight: 600;
     font-size: 16px;
     line-height: 1.2;
+  }
+
+  .content__title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+  }
+
+  .playlistTitle__col {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    color: #696969;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .col01 {
+    flex: 0 1 447px;
+    min-width: 0;
+  }
+
+  .col02 {
+    flex: 0 1 321px;
+    min-width: 0;
+  }
+
+  .col03 {
+    flex: 0 1 245px;
+    min-width: 0;
+  }
+
+  .col04 {
+    flex: 0 0 60px;
+    text-align: end;
   }
 
   @media (max-width: 768px) {
