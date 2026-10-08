@@ -44,7 +44,7 @@
 
   .nav__burger {
     width: 20px;
-    height: 36px;
+    height: 11px;
     padding: 13px 0;
     display: flex;
     flex-direction: column;
@@ -70,7 +70,9 @@
   }
 
   .menu__list {
+    list-style: none;
     padding: 18px 0 10px 0;
+    margin: 0;
   }
 
   .menu__item {
